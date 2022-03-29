@@ -1,3 +1,5 @@
 module FFXIV_MarketBoard {
-	requires java.net.http;
+	requires javafx.controls;
+	
+	opens application to javafx.graphics, javafx.fxml;
 }
