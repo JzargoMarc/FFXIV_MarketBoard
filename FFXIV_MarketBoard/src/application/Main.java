@@ -5,6 +5,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.json.JSONObject;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -26,8 +28,13 @@ public class Main extends Application {
 			HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://universalis.app/api/history/light/8")).GET().build();
 
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
+			
+			
+			//Hier haben wir nun unseren JSON String
 			System.out.println(response.body());
+			
+			ObjectMapper mapper = new ObjectMapper();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
