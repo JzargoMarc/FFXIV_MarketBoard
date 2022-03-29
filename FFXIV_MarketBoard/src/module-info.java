@@ -1,0 +1,2 @@
+module FFXIV_MarketBoard {
+}
